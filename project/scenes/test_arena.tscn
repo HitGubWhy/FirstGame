@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://src/world/TestArena.gd" id="1_test_arena"]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="2_player"]
+[ext_resource type="PackedScene" path="res://scenes/rank1_swordsman.tscn" id="3_rank1"]
+[ext_resource type="PackedScene" path="res://scenes/rank6_guard.tscn" id="4_rank6"]
+[ext_resource type="PackedScene" path="res://scenes/debug_hud.tscn" id="5_debug_hud"]
+[ext_resource type="PackedScene" path="res://scenes/troll_berserker.tscn" id="6_troll"]
+
+[node name="TestArena" type="Node2D"]
+script = ExtResource("1_test_arena")
+
+[node name="Floor0" type="Node2D" parent="."]
+
+[node name="FloorLayer" type="TileMapLayer" parent="Floor0"]
+
+[node name="WallLayer" type="TileMapLayer" parent="Floor0"]
+
+[node name="BuildingInteriorTrigger" type="Area2D" parent="Floor0"]
+monitoring = true
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor0/BuildingInteriorTrigger"]
+
+[node name="SafeBarrierZone" type="Area2D" parent="Floor0"]
+monitoring = true
+monitorable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor0/SafeBarrierZone"]
+
+[node name="Floor1" type="Node2D" parent="."]
+
+[node name="FloorLayer" type="TileMapLayer" parent="Floor1"]
+
+[node name="WallLayer" type="TileMapLayer" parent="Floor1"]
+
+[node name="RoofLayer" type="TileMapLayer" parent="Floor1"]
+
+[node name="FloorSupportZone" type="Area2D" parent="Floor1"]
+monitoring = true
+monitorable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1/FloorSupportZone"]
+
+[node name="StairsArea" type="Area2D" parent="."]
+monitoring = true
+monitorable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StairsArea"]
+
+[node name="Decals" type="Node2D" parent="."]
+
+[node name="Effects" type="Node2D" parent="."]
+
+[node name="Entities" type="Node2D" parent="."]
+
+[node name="Player" parent="Entities" instance=ExtResource("2_player")]
+position = Vector2(112, 256)
+
+[node name="Rank1Swordsman" parent="Entities" instance=ExtResource("3_rank1")]
+position = Vector2(240, 80)
+
+[node name="TrollBerserker" parent="Entities" instance=ExtResource("6_troll")]
+position = Vector2(384, 240)
+
+[node name="Rank6Guard" parent="Entities" instance=ExtResource("4_rank6")]
+position = Vector2(384, 416)
+
+[node name="OverviewCamera" type="Camera2D" parent="."]
+position = Vector2(416, 256)
+zoom = Vector2(0.7, 0.7)
+enabled = false
+
+[node name="DebugHUD" parent="." instance=ExtResource("5_debug_hud")]

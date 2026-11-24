@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/entities/EnemyDummy.gd" id="1_enemy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r1"]
+radius = 8.0
+
+[node name="Rank1Swordsman" type="CharacterBody2D"]
+script = ExtResource("1_enemy")
+preset = 0
+patrol_distance_px = 40.0
+aggro_radius_px = 130.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_r1")

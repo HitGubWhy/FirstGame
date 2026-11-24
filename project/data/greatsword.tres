@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/core/WeaponData.gd" id="1_weapon_data"]
+
+[resource]
+script = ExtResource("1_weapon_data")
+weapon_id = &"greatsword"
+display_name = "Greatsword"
+base_penetration = 28.0
+blade_length = 46.0
+min_optimal_range = 20.0
+edge_sharpness = 1.1
+max_edge_sharpness = 1.1
+max_durability = 100.0
+durability = 100.0
+mass_factor = 18.0
+vertical_reach = 1.0
+damage_mode = 1
+thrust_pierce_mult = 1.2
+slash_pierce_mult = 0.85
+blunt_pierce_mult = 0.15
+slash_sever_mult = 1.25
+blunt_impulse_mult = 1.1
+can_half_sword = true
+windup_sec = 0.36
+active_sec = 0.18
+recovery_sec = 0.38
+swing_arc_deg = 120.0
+stamina_cost = 26.0
+poise_damage = 65.0
+hilt_offset_px = 12.0
+blade_width_px = 6.0
+blade_color = Color(0.752941, 0.807843, 0.878431, 1)

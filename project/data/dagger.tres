@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/core/WeaponData.gd" id="1_weapon_data"]
+
+[resource]
+script = ExtResource("1_weapon_data")
+weapon_id = &"dagger"
+display_name = "Short Dagger"
+base_penetration = 12.0
+blade_length = 14.0
+min_optimal_range = 0.0
+edge_sharpness = 1.0
+max_edge_sharpness = 1.0
+max_durability = 40.0
+durability = 40.0
+mass_factor = 4.0
+vertical_reach = 0.6
+damage_mode = 0
+thrust_pierce_mult = 1.35
+slash_pierce_mult = 1.15
+blunt_pierce_mult = 0.15
+slash_sever_mult = 0.75
+blunt_impulse_mult = 0.8
+can_half_sword = false
+windup_sec = 0.16
+active_sec = 0.12
+recovery_sec = 0.2
+swing_arc_deg = 70.0
+stamina_cost = 10.0
+poise_damage = 18.0
+hilt_offset_px = 12.0
+blade_width_px = 3.0
+blade_color = Color(0.847059, 0.870588, 0.913725, 1)
